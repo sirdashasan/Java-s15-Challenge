@@ -1,7 +1,7 @@
-import library.models.Book;
+//import library.models.Book;
 import library.models.Library;
 
-import java.util.Set;
+//import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,6 +59,7 @@ public class Main {
             }
         }*/
 
+        library.printAllBooks();
 
 
 
