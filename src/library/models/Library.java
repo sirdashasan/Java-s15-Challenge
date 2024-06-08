@@ -1,11 +1,12 @@
 package library.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Library {
 
     private Map<Integer, Book> bookCollection = new HashMap<>(); //composition
+    private Set<String> categories = new HashSet<>();
+
 
     public Library(){
         addInitialBooks();
@@ -85,6 +86,34 @@ public class Library {
             System.out.println("Book not found: " + bookId);
         }
     }
+
+    // Varolan Kategorileri Set ile Unique Şekilde Yazdırma
+    public void printAllCategories() {
+        System.out.println("Categories in the library:");
+        for (Book book : bookCollection.values()) {
+            categories.add(book.getBookCategory().toLowerCase());  // Kategorileri set'e eklediğim yer
+        }
+        for (String category : categories) {
+            System.out.println(category);
+        }
+    }
+
+    // Kategoriye Göre Kitapları Listeleme (Sıralı gelsin diye LinkedHashSet yaptım)
+    public Set<Book> findBooksByCategory(String category) {
+        Set<Book> booksInCategory = new LinkedHashSet<>();
+        for (Book book : bookCollection.values()) {
+            if (book.getBookCategory().equalsIgnoreCase(category)) {
+                booksInCategory.add(book);
+            }
+        }
+        if (booksInCategory.isEmpty()) {
+            System.out.println("No books found in category: " + category);
+        }
+        return booksInCategory;
+    }
+
+
+
 
 
     @Override

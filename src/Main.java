@@ -1,6 +1,8 @@
 import library.models.Book;
 import library.models.Library;
 
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -39,6 +41,24 @@ public class Main {
                 "Güncel Roman", "2024-08-06");
         System.out.println("****************");
         library.printAllBooks();*/
+
+        //***** KATEGORİLERİ UNIQUE ŞEKİLDE YAZDIRMA *****//
+        /*library.printAllBooks();
+        System.out.println("****************");
+        library.printAllCategories();*/
+
+        //***** KATEGORİYE GÖRE KİTAPLARI LİSTELEME *****//
+        library.printAllBooks();
+        System.out.println("****************");
+        String categoryToFind = "roman";
+        Set<Book> booksInCategory = library.findBooksByCategory(categoryToFind);
+        if((!booksInCategory.isEmpty())) {
+            System.out.println("Books in category: " + categoryToFind);
+            for (Book book : booksInCategory) {
+                System.out.println(book);
+            }
+        }
+
 
 
 
