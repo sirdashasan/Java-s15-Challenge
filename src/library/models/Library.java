@@ -6,6 +6,7 @@ public class Library {
 
     private Map<Integer, Book> bookCollection = new HashMap<>(); //composition
     private Set<String> categories = new HashSet<>();
+    private Set<String> authors = new HashSet<>();
 
 
     public Library(){
@@ -25,6 +26,7 @@ public class Library {
         bookCollection.put(10, new Book(10, "Bilinmeyen Bir Kadının Mektubu", "Stefan Zweig", "Roman", "2024-03-03"));
         bookCollection.put(11, new Book(11, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
         bookCollection.put(12, new Book(12, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
+        bookCollection.put(13, new Book(13, "1984", "George Orwell", "Distopic", "2024-03-05"));
     }
 
     // Tüm kitapları yazdırma
@@ -99,7 +101,7 @@ public class Library {
     }
 
     // Kategoriye Göre Kitapları Listeleme (Sıralı gelsin diye LinkedHashSet yaptım)
-    public Set<Book> findBooksByCategory(String category) {
+    public Set<Book> listBooksByCategory(String category) {
         Set<Book> booksInCategory = new LinkedHashSet<>();
         for (Book book : bookCollection.values()) {
             if (book.getBookCategory().equalsIgnoreCase(category)) {
@@ -112,6 +114,30 @@ public class Library {
         return booksInCategory;
     }
 
+    // Varolan Yazarları Set ile Unique Şekilde Yazdırma
+    public void printAllAuthors() {
+        System.out.println("Authors in the library:");
+        for(Book book : bookCollection.values()) {
+            authors.add(book.getBookAuthor().toLowerCase()); // Yazarları set'e eklediğim yer
+        }
+        for (String author : authors) {
+            System.out.println(author);
+        }
+    }
+
+    // Yazarlara Göre Kitapları Listeleme (Sıralı gelsin diye LinkedHashSet yaptım)
+    public Set<Book> listBooksByAuthors(String author) {
+        Set<Book> booksInAuthor = new LinkedHashSet<>();
+        for (Book book : bookCollection.values()) {
+            if (book.getBookAuthor().equalsIgnoreCase(author)) {
+                booksInAuthor.add(book);
+            }
+        }
+        if (booksInAuthor.isEmpty()) {
+            System.out.println("No books found in author: " + author);
+        }
+        return booksInAuthor;
+    }
 
 
 

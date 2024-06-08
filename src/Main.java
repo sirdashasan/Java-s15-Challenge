@@ -1,7 +1,7 @@
-//import library.models.Book;
+import library.models.Book;
 import library.models.Library;
 
-//import java.util.Set;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,7 +51,7 @@ public class Main {
         /*library.printAllBooks();
         System.out.println("****************");
         String categoryToFind = "roman";
-        Set<Book> booksInCategory = library.findBooksByCategory(categoryToFind);
+        Set<Book> booksInCategory = library.listBooksByCategory(categoryToFind);
         if((!booksInCategory.isEmpty())) {
             System.out.println("Books in category: " + categoryToFind);
             for (Book book : booksInCategory) {
@@ -59,7 +59,22 @@ public class Main {
             }
         }*/
 
+        //***** YAZARLARI UNIQUE ŞEKİLDE YAZDIRMA *****//
         library.printAllBooks();
+        System.out.println("****************");
+        library.printAllAuthors();
+
+        //***** YAZARLARA GÖRE KİTAPLARI LİSTELEME *****//
+        library.printAllBooks();
+        System.out.println("****************");
+        String authorToFind = "george orwell";
+        Set<Book> booksInAuthor = library.listBooksByAuthors(authorToFind);
+        if((!booksInAuthor.isEmpty())) {
+            System.out.println("Books in author: " + authorToFind);
+            for (Book book : booksInAuthor) {
+                System.out.println(book);
+            }
+        }
 
 
 
