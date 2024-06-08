@@ -48,7 +48,7 @@ public class Main {
         library.printAllCategories();*/
 
         //***** KATEGORİYE GÖRE KİTAPLARI LİSTELEME *****//
-        library.printAllBooks();
+        /*library.printAllBooks();
         System.out.println("****************");
         String categoryToFind = "roman";
         Set<Book> booksInCategory = library.findBooksByCategory(categoryToFind);
@@ -57,7 +57,7 @@ public class Main {
             for (Book book : booksInCategory) {
                 System.out.println(book);
             }
-        }
+        }*/
 
 
 
