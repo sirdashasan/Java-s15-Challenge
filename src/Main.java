@@ -60,12 +60,12 @@ public class Main {
         }*/
 
         //***** YAZARLARI UNIQUE ŞEKİLDE YAZDIRMA *****//
-        library.printAllBooks();
+        /*library.printAllBooks();
         System.out.println("****************");
-        library.printAllAuthors();
+        library.printAllAuthors();*/
 
         //***** YAZARLARA GÖRE KİTAPLARI LİSTELEME *****//
-        library.printAllBooks();
+        /*library.printAllBooks();
         System.out.println("****************");
         String authorToFind = "george orwell";
         Set<Book> booksInAuthor = library.listBooksByAuthors(authorToFind);
@@ -74,7 +74,10 @@ public class Main {
             for (Book book : booksInAuthor) {
                 System.out.println(book);
             }
-        }
+        }*/
+
+        //***** MAGAZINES, STUDYBOOKS VE JOURNALS EKLENMİŞ HALİ *****//
+        library.printAllBooks();
 
 
 

@@ -27,6 +27,9 @@ public class Library {
         bookCollection.put(11, new Book(11, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
         bookCollection.put(12, new Book(12, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
         bookCollection.put(13, new Book(13, "1984", "George Orwell", "Distopic", "2024-03-05"));
+        bookCollection.put(14, new Magazines(14, "Four Four Two", "Various", "Magazine", "2024-12-06", "2024-06"));
+        bookCollection.put(15, new StudyBooks(15, "Thomas' Calculus", "George B.Thomas", "Study Book", "2024-12-06", "Mathematics"));
+        bookCollection.put(16, new Journals(16, "Hybrid Car Vehicles", "Hasan Sırdaş", "Journal", "2024-12-06", true));
     }
 
     // Tüm kitapları yazdırma
