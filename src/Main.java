@@ -77,7 +77,7 @@ public class Main {
         }*/
 
         //***** MAGAZINES, STUDYBOOKS VE JOURNALS EKLENMİŞ HALİ *****//
-        library.printAllBooks();
+        //library.printAllBooks();
 
 
 

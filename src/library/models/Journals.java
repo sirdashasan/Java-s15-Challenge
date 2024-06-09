@@ -13,6 +13,7 @@ public class Journals extends Book {
         return hasReferences;
     }
 
+
     public void setHasReferences(boolean hasReferences) {
         this.hasReferences = hasReferences;
     }
