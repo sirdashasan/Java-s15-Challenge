@@ -1,7 +1,4 @@
-import library.models.Author;
-import library.models.Book;
-import library.models.Library;
-import library.models.Person;
+import library.models.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -41,6 +38,54 @@ public class PersonMain {
         }*/
 
         // *****///***** //
+
+        //***** READER CLASS READER OLUŞTURMA *****//
+        MemberRecord memberRecord = new MemberRecord(1, "2024-01-01", MemberType.STUDENT);
+        Person reader = new Reader("Taylan Can Köse", memberRecord);
+
+
+        //***** READER KİTAP ÖDÜNÇ ALMA *****//
+        Book bookToBorrow = library.findBookById(5);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow);
+        Book bookToBorrow2 = library.findBookById(1);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow2);
+        Book bookToBorrow3 = library.findBookById(2);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow3);
+        Book bookToBorrow4 = library.findBookById(6);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow4);
+        Book bookToBorrow5 = library.findBookById(7);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow5);
+        Book bookToBorrow6 = library.findBookById(8);
+        ((Reader) reader).getMemberRecord().borrowBook(bookToBorrow6);
+        System.out.println("Borrowed Books:");
+        for (Book book : ((Reader) reader).getMemberRecord().getBorrowedBooks()) {
+            System.out.println(book);
+        }
+
+        //Ödünç alınan kitap sayısı
+        System.out.println(reader.getPersonName() + " has borrowed " +
+                ((Reader) reader).getMemberRecord().getNumberOfBookBorrowed() + " books.");
+        System.out.println("****************");
+        library.printAllBooks();
+        System.out.println("****************");
+
+
+
+        System.out.println("****************");
+        System.out.println("****************");
+        System.out.println("****************");
+        //***** READER KİTAP GERİ VERME *****//
+        ((Reader) reader).getMemberRecord().returnBook(bookToBorrow);
+        ((Reader) reader).getMemberRecord().returnBook(bookToBorrow2);
+
+
+        System.out.println("****************");
+        library.printAllBooks();
+
+
+
+
+
 
 
 

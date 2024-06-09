@@ -43,6 +43,10 @@ public class Book {
         return status;
     }
 
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     //Kitap bilgilerinin güncellenmesi
     public void updateBookDetails(String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status){
         this.bookName = bookName;
