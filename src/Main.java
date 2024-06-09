@@ -14,7 +14,7 @@ public class Main {
         //***** KİTAP EKLEME *****//
         /*library.printAllBooks();
         System.out.println("****************");
-        Book book1 = new Book(1, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01");
+        Book book1 = new Book(1, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01", true);
         library.addBook(book1, "Hasan");
         System.out.println("****************");
         library.printAllBooks();*/
@@ -38,10 +38,10 @@ public class Main {
         System.out.println(booksByAuthor);*/
 
         //***** KİTAP BİLGİLERİNİ GÜNCELLEME *****//
-       /* library.printAllBooks();
+        /*library.printAllBooks();
         System.out.println("****************");
         library.updateBookDetails(10, "Güncel Aşkın Kapısı", "Güncel İkbal Bayrak",
-                "Güncel Roman", "2024-08-06");
+                "Güncel Roman", "2024-08-06",false);
         System.out.println("****************");
         library.printAllBooks();*/
 

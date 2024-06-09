@@ -3,9 +3,9 @@ package library.models;
 public class Magazines extends Book{
     private String issueNumber;
 
-    public Magazines(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase,
+    public Magazines(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status,
                      String issueNumber) {
-        super(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase);
+        super(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase, status);
         this.issueNumber = issueNumber;
     }
 

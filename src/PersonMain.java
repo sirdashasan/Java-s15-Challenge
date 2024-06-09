@@ -12,33 +12,37 @@ public class PersonMain {
         Library library = new Library();
 
         //***** AUTHOR CLASS YAZAR OLUŞTURMA *****//
-        library.printAllBooks();
-        Set<Book> booksWriterByAuthor = new HashSet<>();
+        /*Set<Book> booksWriterByAuthor = new HashSet<>();
         Person author = new Author("George Orwell", booksWriterByAuthor); //Polymorphism
-        System.out.println("****************");
+        System.out.println("****************");*/
+
+        //***** AUTHOR CLASS KİTAPLARI GÖRÜNTÜLEME *****//
+        /*((Author) author).printAllBooksWriter(library);
+        System.out.println("****************");*/
 
 
         //***** AUTHOR CLASS KİTAP EKLEME *****//
-        Book newBook = new Book(1, "Hayvan Çiftliği", "George Orwell", "Roman", "2024-06-06");
-        ((Author) author).addBookByWriter(newBook, library); // Down casting
+        /*Book newBook = new Book(1, "Hayvan Çiftliği", "George Orwell", "Roman", "2024-06-06");
+        ((Author) author).addBookByWriter(newBook, library); // Down casting*/
 
-        System.out.println("****************");
-        library.printAllBooks();
-        System.out.println("****************");
 
         // ***** AUTHOR CLASS KİTAPLARI ID'YE GÖRE GÖRÜNTÜLEME ***** //
-        Book bookById = ((Author) author).findBookByIdWriter(6, library);
-        System.out.println(bookById);
+        /*Book bookById = ((Author) author).findBookByIdWriter(6, library);
+        System.out.println(bookById);*/
 
         // ***** AUTHOR CLASS KİTAPLARI KİTAP İSMİNE GÖRE GÖRÜNTÜLEME ***** //
-        Book bookByName = ((Author) author).findBookByNameWriter("Körlük",library);
+        /*Book bookByName = ((Author) author).findBookByNameWriter("Körlük",library);
         System.out.println(bookByName);
-
+*/
         // ***** AUTHOR CLASS KİTAPLARI YAZAR İSMİNE GÖRE GÖRÜNTÜLEME ***** //
-        Set<Book> booksByAuthor = ((Author) author).findBooksByAuthorWriter("George Orwell",library);
+        /*Set<Book> booksByAuthor = ((Author) author).findBooksByAuthorWriter("George Orwell",library);
         for (Book book : booksByAuthor) {
             System.out.println(book);
-        }
+        }*/
+
+        // *****///***** //
+
+
 
 
 

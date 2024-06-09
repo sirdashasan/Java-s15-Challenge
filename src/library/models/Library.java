@@ -14,22 +14,22 @@ public class Library {
     }
 
     private void addInitialBooks() {
-        bookCollection.put(1, new Book(1, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01"));
-        bookCollection.put(2, new Book(2, "Sil Baştan", "Lynn Painter", "Genç Yetişkin", "2024-04-01"));
-        bookCollection.put(3, new Book(3, "Öfke Kralı", "Ana Huang", "Roman", "2024-05-01"));
-        bookCollection.put(4, new Book(4, "Maça Kızı 8", "Dilara Pamuk", "Genç Yetişkin", "2024-06-01"));
-        bookCollection.put(5, new Book(5, "Afili Hafiye", "Murat Menteş", "Polisiye", "2024-03-02"));
-        bookCollection.put(6, new Book(6, "Kendi Işığına Yürü", "Kemal Sayar", "Kişisel Gelişim", "2024-04-02"));
-        bookCollection.put(7, new Book(7, "Çarpık Yalanlar", "Ana Huang", "Roman", "2024-05-02"));
-        bookCollection.put(8, new Book(8, "Kürk Mantolu Madonna", "Sabahattin Ali", "Roman", "2024-06-02"));
-        bookCollection.put(9, new Book(9, "Hayvan Çiftliği", "George Orwell", "Roman", "2024-07-02"));
-        bookCollection.put(10, new Book(10, "Bilinmeyen Bir Kadının Mektubu", "Stefan Zweig", "Roman", "2024-03-03"));
-        bookCollection.put(11, new Book(11, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
-        bookCollection.put(12, new Book(12, "Körlük", "Jose Saramago", "Roman", "2024-03-04"));
-        bookCollection.put(13, new Book(13, "1984", "George Orwell", "Distopic", "2024-03-05"));
-        bookCollection.put(14, new Magazines(14, "Four Four Two", "Various", "Magazine", "2024-12-06", "2024-06"));
-        bookCollection.put(15, new StudyBooks(15, "Thomas' Calculus", "George B.Thomas", "Study Book", "2024-12-06", "Mathematics"));
-        bookCollection.put(16, new Journals(16, "Hybrid Car Vehicles", "Hasan Sırdaş", "Journal", "2024-12-06", true));
+        bookCollection.put(1, new Book(1, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01",true));
+        bookCollection.put(2, new Book(2, "Sil Baştan", "Lynn Painter", "Genç Yetişkin", "2024-04-01",true));
+        bookCollection.put(3, new Book(3, "Öfke Kralı", "Ana Huang", "Roman", "2024-05-01",true));
+        bookCollection.put(4, new Book(4, "Maça Kızı 8", "Dilara Pamuk", "Genç Yetişkin", "2024-06-01",true));
+        bookCollection.put(5, new Book(5, "Afili Hafiye", "Murat Menteş", "Polisiye", "2024-03-02",true));
+        bookCollection.put(6, new Book(6, "Kendi Işığına Yürü", "Kemal Sayar", "Kişisel Gelişim", "2024-04-02",true));
+        bookCollection.put(7, new Book(7, "Çarpık Yalanlar", "Ana Huang", "Roman", "2024-05-02",true));
+        bookCollection.put(8, new Book(8, "Kürk Mantolu Madonna", "Sabahattin Ali", "Roman", "2024-06-02",true));
+        bookCollection.put(9, new Book(9, "Hayvan Çiftliği", "George Orwell", "Roman", "2024-07-02",true));
+        bookCollection.put(10, new Book(10, "Bilinmeyen Bir Kadının Mektubu", "Stefan Zweig", "Roman", "2024-03-03",true));
+        bookCollection.put(11, new Book(11, "Körlük", "Jose Saramago", "Roman", "2024-03-04",true));
+        bookCollection.put(12, new Book(12, "Körlük", "Jose Saramago", "Roman", "2024-03-04",true));
+        bookCollection.put(13, new Book(13, "1984", "George Orwell", "Distopic", "2024-03-05",true));
+        bookCollection.put(14, new Magazines(14, "Four Four Two", "Various", "Magazine", "2024-12-06", true, "2024-05"));
+        bookCollection.put(15, new StudyBooks(15, "Thomas' Calculus", "George B.Thomas", "Study Book", "2024-12-06", true, "Mathematics"));
+        bookCollection.put(16, new Journals(16, "Hybrid Car Vehicles", "Hasan Sırdaş", "Journal", "2024-12-06", true, true));
     }
 
     // Tüm kitapları yazdırma
@@ -45,7 +45,7 @@ public class Library {
         if (bookCollection.containsKey(book.getBookId())) {
             System.out.println("Book ID " + book.getBookId() + " already exists. Adding the book with a new ID.");
             int newId = Collections.max(bookCollection.keySet()) + 1;
-            book = new Book(newId, book.getBookName(), book.getBookAuthor(), book.getBookCategory(), book.getBookDateOfPurchase());
+            book = new Book(newId, book.getBookName(), book.getBookAuthor(), book.getBookCategory(), book.getBookDateOfPurchase(), book.isAvailable());
         }
         bookCollection.put(book.getBookId(), book);
         System.out.println("Book added: " + book + " added by " + addedBy);
@@ -87,10 +87,10 @@ public class Library {
     }
 
     //Kitap bilgileri güncelleme(book classındaki updateBookDetails methodu ile)
-    public void updateBookDetails(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase){
+    public void updateBookDetails(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status){
         Book book = findBookById(bookId);
         if(book != null){
-            book.updateBookDetails(bookName, bookAuthor, bookCategory, bookDateOfPurchase);
+            book.updateBookDetails(bookName, bookAuthor, bookCategory, bookDateOfPurchase, status);
             System.out.println("Book details updated: " + book);
         } else {
             System.out.println("Book not found: " + bookId);

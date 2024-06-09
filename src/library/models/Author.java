@@ -17,12 +17,18 @@ public class Author extends Person{
         return booksWriter;
     }
 
+    //Yazarın tüm kitapları görüntülemesi
+    public void printAllBooksWriter(Library library){
+        library.printAllBooks();
+    }
+
     // Yazarın kütüphaneye kitap eklemesi
     public void addBookByWriter(Book book, Library library){
         library.addBook(book, "author " + getPersonName());
     }
 
-    //Yazarın kitapları bookID'ye göre görüntülemesi için
+
+    /*//Yazarın kitapları bookID'ye göre görüntülemesi için
     public Book findBookByIdWriter(int bookId, Library library){
         return library.findBookById(bookId);
     }
@@ -36,7 +42,7 @@ public class Author extends Person{
     public Set<Book> findBooksByAuthorWriter(String bookAuthor, Library library) {
         return library.listBooksByAuthors(bookAuthor);
     }
-
+*/
 
     @Override
     public String whoYouAre() {

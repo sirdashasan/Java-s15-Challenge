@@ -8,13 +8,15 @@ public class Book {
     private String bookAuthor;
     private String bookCategory;
     private String bookDateOfPurchase;
+    private boolean status; // true ise kitap mevcut false ise kitap birisi tarafından alınmış.
 
-    public Book(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase) {
+    public Book(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookCategory = bookCategory;
         this.bookDateOfPurchase = bookDateOfPurchase;
+        this.status = status;
     }
 
     public int getBookId() {
@@ -37,12 +39,17 @@ public class Book {
         return bookDateOfPurchase;
     }
 
+    public boolean isAvailable() {
+        return status;
+    }
+
     //Kitap bilgilerinin güncellenmesi
-    public void updateBookDetails(String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase){
+    public void updateBookDetails(String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status){
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookCategory = bookCategory;
         this.bookDateOfPurchase = bookDateOfPurchase;
+        this.status = status;
     }
 
     @Override
@@ -50,12 +57,12 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return bookId == book.bookId && Objects.equals(bookName, book.bookName) && Objects.equals(bookAuthor, book.bookAuthor) && Objects.equals(bookCategory, book.bookCategory) && Objects.equals(bookDateOfPurchase, book.bookDateOfPurchase);
+        return bookId == book.bookId && status == book.status && Objects.equals(bookName, book.bookName) && Objects.equals(bookAuthor, book.bookAuthor) && Objects.equals(bookCategory, book.bookCategory) && Objects.equals(bookDateOfPurchase, book.bookDateOfPurchase);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase);
+        return Objects.hash(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase, status);
     }
 
     @Override
@@ -66,6 +73,7 @@ public class Book {
                 ", bookAuthor='" + bookAuthor + '\'' +
                 ", bookCategory='" + bookCategory + '\'' +
                 ", bookDateOfPurchase='" + bookDateOfPurchase + '\'' +
+                ", status=" + (status ? "available" : "borrowed") +
                 '}';
     }
 }

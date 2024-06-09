@@ -3,9 +3,9 @@ package library.models;
 public class Journals extends Book {
     private boolean hasReferences;
 
-    public Journals(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase,
+    public Journals(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status,
                     boolean hasReferences) {
-        super(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase);
+        super(bookId, bookName, bookAuthor, bookCategory, bookDateOfPurchase, status);
         this.hasReferences = hasReferences;
     }
 
