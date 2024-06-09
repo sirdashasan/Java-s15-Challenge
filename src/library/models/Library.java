@@ -41,9 +41,14 @@ public class Library {
     }
 
     // Kitap ekleme (tüm bilgileri ayrı ayrı almak yerine encapsulation)
-    public void addBook(Book book){
+    public void addBook(Book book, String addedBy) {
+        if (bookCollection.containsKey(book.getBookId())) {
+            System.out.println("Book ID " + book.getBookId() + " already exists. Adding the book with a new ID.");
+            int newId = Collections.max(bookCollection.keySet()) + 1;
+            book = new Book(newId, book.getBookName(), book.getBookAuthor(), book.getBookCategory(), book.getBookDateOfPurchase());
+        }
         bookCollection.put(book.getBookId(), book);
-        System.out.println("Book added: " + book);
+        System.out.println("Book added: " + book + " added by " + addedBy);
     }
 
     // Kitap silme

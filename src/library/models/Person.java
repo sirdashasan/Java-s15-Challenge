@@ -11,6 +11,8 @@ public abstract class Person {
         return personName;
     }
 
+    public abstract String whoYouAre();
+
     @Override
     public String toString() {
         return "Person{" +

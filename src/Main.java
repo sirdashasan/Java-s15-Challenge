@@ -1,6 +1,9 @@
+import library.models.Author;
 import library.models.Book;
 import library.models.Library;
+import library.models.Person;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Main {
@@ -11,8 +14,8 @@ public class Main {
         //***** KİTAP EKLEME *****//
         /*library.printAllBooks();
         System.out.println("****************");
-        Book book1 = new Book(13, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01");
-        library.addBook(book1);
+        Book book1 = new Book(1, "Aşkın Kapısı", "İkbal Bayrak", "Roman", "2024-03-01");
+        library.addBook(book1, "Hasan");
         System.out.println("****************");
         library.printAllBooks();*/
 
@@ -78,6 +81,8 @@ public class Main {
 
         //***** MAGAZINES, STUDYBOOKS VE JOURNALS EKLENMİŞ HALİ *****//
         //library.printAllBooks();
+
+
 
 
 
