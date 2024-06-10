@@ -45,13 +45,14 @@ public class MemberRecord {
         return borrowedBooks;
     }
 
-    public void borrowBook(Book book, Library library){
+    public void borrowBook(Book book, Reader reader, Library library){
         if(numberOfBookBorrowed < maxBookLimit && book.isAvailable()){
             borrowedBooks.add(book);
             numberOfBookBorrowed++;
             book.setStatus(false);
-            library.updateLibraryBalanceOnBorrow();
+            double amount = library.updateLibraryBalanceOnBorrow(memberType);
             System.out.println("Book borrowed: " + book);
+            printInvoice(reader, amount);
         } else if(numberOfBookBorrowed >= maxBookLimit) {
             System.out.println("!!!Maximum book limit reached!!!");
         } else {
@@ -71,20 +72,27 @@ public class MemberRecord {
         }
     }
 
-    public void printInvoice(Reader reader, Library library) {
-        System.out.println("Invoice:");
+    public void printInvoice(Reader reader, double amount) {
+        System.out.println("***$$$*****INVOICE:***$$$*****");
         if (reader != null) {
             System.out.println("Member ID: " + memberId);
             System.out.println("Member Name: " + reader.getPersonName());
             System.out.println("Member Address: " + reader.getPersonAddress());
             System.out.println("Member Phone: " + reader.getPersonPhone());
             System.out.println("Member Type: " + memberType);
+            if (memberType == MemberType.STUDENT) {
+                System.out.println("Student Number: " + ((Student) reader).getStudentNumber());
+            } else if (memberType == MemberType.FACULTY) {
+                System.out.println("Faculty Department: " + ((Faculty) reader).getFacultyDepartment());
+                System.out.println("Faculty Title: " + ((Faculty) reader).getFacultyTitle());
+            }
         }
         System.out.println("Borrowed Books:");
         for (Book book : borrowedBooks) {
             System.out.println(book.getBookName());
         }
         System.out.println("Total Books Borrowed: " + numberOfBookBorrowed);
-        System.out.println("Amount paid: " + library.getLibraryBalance() + " TL");
+        System.out.println("Amount paid: " + amount + " TL");
+        System.out.println("***$$$*****INVOICE:***$$$*****");
     }
 }

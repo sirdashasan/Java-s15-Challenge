@@ -10,8 +10,8 @@ public class Library {
 
     private double libraryBalance = 0.0; // Kütüphanenin kasa bakiyesi
 
-    private static final double BORROW_FEE = 100.0;
-    private static final double RETURN_FEE = 50.0;
+    private static double BORROW_FEE = 100.0;
+    private static double RETURN_FEE = 50.0;
 
 
     public Library(){
@@ -158,8 +158,13 @@ public class Library {
     }
 
     //Kitap ödünç alındığında kütüphane bakiyesinin güncellenmesi
-    public void updateLibraryBalanceOnBorrow(){
-        libraryBalance += BORROW_FEE;
+    public double updateLibraryBalanceOnBorrow(MemberType memberType){
+        double fee = BORROW_FEE;
+        if (memberType == MemberType.STUDENT) {
+            fee *= 0.75; // %25 indirim
+        }
+        libraryBalance += fee;
+        return fee;
     }
 
     //Kitap geri getirildiğinde kütüphane bakiyesinin güncellenmesi

@@ -8,7 +8,7 @@ public class Author extends Person{
     private Set<Book> booksWriter = new HashSet<>();
 
 
-    public Author(String personName, String personAddress, String personPhone, Set<Book> booksWritten) {
+    public Author(String personName, String personAddress, String personPhone, Set<Book> booksWriter) {
         super(personName, personAddress, personPhone);
         this.booksWriter = booksWriter;
     }
