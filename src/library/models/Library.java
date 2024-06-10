@@ -8,6 +8,11 @@ public class Library {
     private Set<String> categories = new HashSet<>();
     private Set<String> authors = new HashSet<>();
 
+    private double libraryBalance = 0.0; // Kütüphanenin kasa bakiyesi
+
+    private static final double BORROW_FEE = 100.0;
+    private static final double RETURN_FEE = 50.0;
+
 
     public Library(){
         addInitialBooks();
@@ -146,6 +151,22 @@ public class Library {
         }
         return booksInAuthor;
     }
+
+    //Kütüphane bakiyesi
+    public double getLibraryBalance() {
+        return libraryBalance;
+    }
+
+    //Kitap ödünç alındığında kütüphane bakiyesinin güncellenmesi
+    public void updateLibraryBalanceOnBorrow(){
+        libraryBalance += BORROW_FEE;
+    }
+
+    //Kitap geri getirildiğinde kütüphane bakiyesinin güncellenmesi
+    public void updateLibraryBalanceOnReturn(){
+        libraryBalance -= RETURN_FEE;
+    }
+
 
 
 

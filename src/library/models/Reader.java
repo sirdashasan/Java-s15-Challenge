@@ -4,8 +4,8 @@ public class Reader extends Person {
 
     private MemberRecord memberRecord;
 
-    public Reader(String personName, MemberRecord memberRecord ) {
-        super(personName);
+    public Reader(String personName, String personAddress, String personPhone, MemberRecord memberRecord ) {
+        super(personName, personAddress, personPhone);
         this.memberRecord = memberRecord;
     }
 
@@ -13,13 +13,19 @@ public class Reader extends Person {
         return memberRecord;
     }
 
-    public void borrowBook(Book book){
-        memberRecord.borrowBook(book);
+    public void borrowBook(Book book, Library library){
+        memberRecord.borrowBook(book, library );
     }
 
-    public void returnBook(Book book){
-        memberRecord.returnBook(book);
+    public void returnBook(Book book, Library library){
+        memberRecord.returnBook(book, library);
     }
+
+    public void printAllBooksReader(Library library){
+        library.printAllBooks();
+    }
+
+
 
     @Override
     public String whoYouAre() {
@@ -32,4 +38,6 @@ public class Reader extends Person {
                 "memberRecord=" + memberRecord +
                 '}';
     }
+
+
 }
