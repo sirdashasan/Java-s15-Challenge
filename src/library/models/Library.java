@@ -172,7 +172,14 @@ public class Library {
         libraryBalance -= RETURN_FEE;
     }
 
-
+    // Fatura tutarını hesaplamak için
+    public double getBorrowFee(MemberType memberType) {
+        double fee = BORROW_FEE;
+        if (memberType == MemberType.STUDENT) {
+            fee *= 0.75; // %25 indirim
+        }
+        return fee;
+    }
 
 
 

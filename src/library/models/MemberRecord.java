@@ -50,13 +50,15 @@ public class MemberRecord {
             borrowedBooks.add(book);
             numberOfBookBorrowed++;
             book.setStatus(false);
+            book.setBorrowedBy(reader); // Kitabı ödünç alan kişiyi ayarla
             double amount = library.updateLibraryBalanceOnBorrow(memberType);
             System.out.println("Book borrowed: " + book);
-            printInvoice(reader, amount);
         } else if(numberOfBookBorrowed >= maxBookLimit) {
             System.out.println("!!!Maximum book limit reached!!!");
         } else {
-            System.out.println("Book is not available.");
+            if (book.getBorrowedBy() != null) {
+                System.out.println("Book is not available. This book is borrowed by " + book.getBorrowedBy().getPersonName());
+            }
         }
     }
 
@@ -65,12 +67,14 @@ public class MemberRecord {
             borrowedBooks.remove(book);
             numberOfBookBorrowed--;
             book.setStatus(true);
+            book.setBorrowedBy(null);
             library.updateLibraryBalanceOnReturn();
             System.out.println("Book returned: " + book);
         } else {
             System.out.println("This book was not borrowed by you.");
         }
     }
+
 
     public void printInvoice(Reader reader, double amount) {
         System.out.println("***$$$*****INVOICE:***$$$*****");
@@ -80,9 +84,9 @@ public class MemberRecord {
             System.out.println("Member Address: " + reader.getPersonAddress());
             System.out.println("Member Phone: " + reader.getPersonPhone());
             System.out.println("Member Type: " + memberType);
-            if (memberType == MemberType.STUDENT) {
+            if (reader instanceof Student) {
                 System.out.println("Student Number: " + ((Student) reader).getStudentNumber());
-            } else if (memberType == MemberType.FACULTY) {
+            } else if (reader instanceof Faculty) {
                 System.out.println("Faculty Department: " + ((Faculty) reader).getFacultyDepartment());
                 System.out.println("Faculty Title: " + ((Faculty) reader).getFacultyTitle());
             }

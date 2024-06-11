@@ -13,8 +13,8 @@ public class Reader extends Person {
         return memberRecord;
     }
 
-    public void borrowBook(Book book, Library library, Reader reader){
-        memberRecord.borrowBook(book, reader, library );
+    public void borrowBook(Book book, Library library){
+        memberRecord.borrowBook(book, this, library);
     }
 
     public void returnBook(Book book, Library library){

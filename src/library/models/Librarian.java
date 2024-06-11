@@ -35,12 +35,6 @@ public class Librarian extends Person {
     }
 
 
-    //Kütüphanecinin kitap ödünç verebilmesi ve fatura
-    /*public void borrowBookLibrarian(Book book, Reader reader, Library library) {
-        reader.getMemberRecord().borrowBook(book, reader, library);
-        System.out.println("The book was borrowed. Approval: Librarian.");
-    }*/
-
     public boolean verifyMember(Reader reader) {
         if (reader.getPersonName() == null || reader.getPersonName().isEmpty()) return false;
         if (reader.getPersonAddress() == null || reader.getPersonAddress().isEmpty()) return false;
@@ -68,10 +62,6 @@ public class Librarian extends Person {
     public double getLibraryBalance(Library library){
         return library.getLibraryBalance();
     }
-
-
-
-
 
 
 }

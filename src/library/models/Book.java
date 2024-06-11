@@ -9,6 +9,7 @@ public class Book {
     private String bookCategory;
     private String bookDateOfPurchase;
     private boolean status; // true ise kitap mevcut false ise kitap birisi tarafından alınmış.
+    private Reader borrowedBy;
 
     public Book(int bookId, String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status) {
         this.bookId = bookId;
@@ -17,6 +18,7 @@ public class Book {
         this.bookCategory = bookCategory;
         this.bookDateOfPurchase = bookDateOfPurchase;
         this.status = status;
+        this.borrowedBy = null;
     }
 
     public int getBookId() {
@@ -46,6 +48,16 @@ public class Book {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public Reader getBorrowedBy() {
+        return borrowedBy;
+    }
+
+    public void setBorrowedBy(Reader borrowedBy) {
+        this.borrowedBy = borrowedBy;
+    }
+
+
 
     //Kitap bilgilerinin güncellenmesi
     public void updateBookDetails(String bookName, String bookAuthor, String bookCategory, String bookDateOfPurchase, boolean status){
