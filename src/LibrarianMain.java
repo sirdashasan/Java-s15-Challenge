@@ -24,7 +24,7 @@ public class LibrarianMain {
         System.out.println("Book found by name: " + bookByName);*/
 
         // Yazar ismine göre kitapları listeleme
-        /*Set<Book> booksByAuthor = librarian.findBooksByAuthorLibrarian("George Orwell", library);
+        Set<Book> booksByAuthor = librarian.findBooksByAuthorLibrarian("George Orwell", library);
         System.out.println("Books found by author:");
         for (Book book : booksByAuthor) {
             System.out.println(book);
@@ -34,7 +34,7 @@ public class LibrarianMain {
         System.out.println("************************");
         System.out.println("************************");
         System.out.println("************************");
-        System.out.println("************************");*/
+        System.out.println("************************");
 
         //***** KÜTÜPHANECİ *****//
 
