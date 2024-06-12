@@ -48,8 +48,8 @@ public class Main {
         //***** KATEGORİLERİ UNIQUE ŞEKİLDE YAZDIRMA *****//
         /*library.printAllBooks();
         System.out.println("****************");
-        library.printAllCategories();*/
-
+        library.printAllCategories();
+*/
         //***** KATEGORİYE GÖRE KİTAPLARI LİSTELEME *****//
         /*System.out.println("****************");
         String categoryToFind = "roman";

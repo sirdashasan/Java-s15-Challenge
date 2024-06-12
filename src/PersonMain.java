@@ -21,19 +21,19 @@ public class PersonMain {
         Book newBook = new Book(1, "Hayvan Çiftliği", "George Orwell", "Roman", "2024-06-06",true);
         ((Author) author).addBookByWriter(newBook, library);
 
-        ((Author) author).printAllBooksWriter(library);*/
-
+        ((Author) author).printAllBooksWriter(library);
+*/
 
         // **********************************///******************************************* //
 
         //***** READER CLASS READER OLUŞTURMA *****//
-        /*library.printAllBooks();
+       /* library.printAllBooks();
         System.out.println("****************");
         MemberRecord memberRecord = new MemberRecord(1, "2024-01-01", MemberType.STUDENT);
         Person reader = new Reader("Taylan Can Köse","İzmir Karşıyaka", "554-789-6129", memberRecord);
         MemberRecord memberRecord2 = new MemberRecord(2, "2024-01-01", MemberType.FACULTY);
-        Person reader2 = new Reader("Mehmet Algül","İzmir Karşıyaka", "554-320-3248", memberRecord);
-*/
+        Person reader2 = new Reader("Mehmet Algül","İzmir Karşıyaka", "554-320-3248", memberRecord);*/
+
 
         //***** READER KİTAP ÖDÜNÇ ALMA *****//
         /*Book bookToBorrow = library.findBookById(5);
@@ -77,8 +77,8 @@ public class PersonMain {
         System.out.println("****************");
         library.printAllBooks();
 
-        System.out.println("****************");
-*/
+        System.out.println("****************");*/
+
         // İkinci bir kişi alınan kitabı isterse
         /*Book bookToBorrow7 = library.findBookById(7);
         ((Reader) reader2).borrowBook(bookToBorrow7, library);*/
@@ -114,7 +114,7 @@ public class PersonMain {
         System.out.println("****************");*/
 
 
-        //***** READER KİTAP İADE ETME ve KÜTÜPHANE BAKİYESİ*****//
+        //Reader Kitap İade ve Kütüphane Bakiyesi
         /*System.out.println("*********KİTAP GERİ GETİRME:*******");
         ((Reader) reader).returnBook(bookToBorrow, library);
 
@@ -168,8 +168,8 @@ public class PersonMain {
         faculty.borrowBook(facultyBookToBorrow, library);
 
         System.out.println("***$$$*****INVOICE:***$$$*****");
-        double totalAmount = faculty.getMemberRecord().getNumberOfBookBorrowed() * library.getBorrowFee(facultyRecord.getMemberType());
-        faculty.getMemberRecord().printInvoice(faculty, totalAmount);
+        double totalAmount2 = faculty.getMemberRecord().getNumberOfBookBorrowed() * library.getBorrowFee(facultyRecord.getMemberType());
+        faculty.getMemberRecord().printInvoice(faculty, totalAmount2);
         System.out.println("***$$$*****INVOICE:***$$$*****");
 
         System.out.println("****************");

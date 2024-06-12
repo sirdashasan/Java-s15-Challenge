@@ -28,4 +28,8 @@ public class Student extends Reader {
     public void borrowBook(Book book, Library library) {
         getMemberRecord().borrowBook(book, this, library);
     }
+
+    public void returnBook(Book book, Library library) {
+        getMemberRecord().borrowBook(book, this, library);
+    }
 }
